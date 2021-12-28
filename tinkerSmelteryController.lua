@@ -100,7 +100,7 @@ local function logic(alloyList)
   if #con.getAllStacks() == 0 then
     if con.getInfo().contents == nil then
       redstone.setAnalogOutput("right",0)
-      task = getSet()
+      task = getSet(alloyList)
       clrScreen()
       print("Task: "..task)
     else
@@ -116,7 +116,7 @@ local function logic(alloyList)
   end
 end
 
-os.loadApi("SmelteryAlloys")
+os.loadAPI("SmelteryAlloys")
 while true do
 
   logic(SmelteryAlloys.alloys)
